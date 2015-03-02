@@ -1,0 +1,6 @@
+**/win32
+*.cbproj.local
+*.lib
+*.bpi
+bar
+install
