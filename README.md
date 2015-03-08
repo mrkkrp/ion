@@ -63,6 +63,17 @@ boy, but anyway here is a list of bad things about ION:
 
 - There is probability that you'll meet a horned toad while using the app.
 
+## How to Improve ION
+
+If you want to improve ION and continue its development, I advise the
+following improvements:
+
+- use boost instead of STL;
+- try to rewrite some parts in more functional style;
+- use some well-known library to work with WAVE, abandon my library;
+- use XML instead of parameter lists, abandon my library;
+- it would be great if it could be compiled with GCC (Qt for GUI).
+
 ## License
 
 Copyright (c) 2014 Mark Karpov
