@@ -12,31 +12,58 @@ as I've lost any interest for imperative languages other than assembly and C
 
 ION consists of the following programs:
 
-- **Scores Editor** creates scores and translates them into `.wav` files.
+* **Scores Editor** creates scores and translates them into `.wav` files.
 
-- **Sonorities Editor** creates primitive instruments.
+* **Sonorities Editor** creates primitive instruments.
 
-- **Generator** generates scores that you can then translate.
+* **Generator** generates scores that you can then translate.
 
-- **Parameter Lists Editor** creates parameter lists. It's kinda file
+* **Parameter Lists Editor** creates parameter lists. It's kinda file
   format.
 
-- **Wave Master**. Don't use it, use SoundForge or whatever.
+* **Wave Master**. Don't use it, use SoundForge or whatever.
 
-- **ION Launcher**. Yes the icons are funny, I made them myself.
+* **ION Launcher**. Yes the icons are funny, I made them myself.
+
+## Installation
+
+ION is written with commercial IDE C++ Builder. It makes compilation form
+source more difficult (or to be precise, it makes you get the commercial
+compiler). Version XE 2 or later is required.
+
+1. You should download or clone ION repository. To clone the repository
+execute the following command:
+
+    ```
+    $ git clone https://github.com/mrkkrp/ion.git master
+    ```
+
+2. If your version of C++ Builder is different form XE 5, or if you've
+installed the IDE in non-default directory, you have to edit `make.cmd` in
+order to correct some pathes on top of the file.
+
+3. Now you're ready to run `make.cmd` script. This script will compile
+entire ION system and form ready-to-use application in `bar`
+subdirectory. However, for normal functioning one should generate installer
+and then install ION with the installer.
+
+4. To generate installer we use Inno Setup. Thus, you should install Inno
+Setup (it is free software). Use `ion.iss` file to produce ION installer.
+
+5. Run the installer.
 
 ## Known issues
 
-ION had lots of bugs in the past (in is in C++!), but now it is kinda good
+ION had lots of bugs in the past (it is in C++!), but now it's kinda good
 boy, but anyway here is a list of bad things about ION:
 
-- When you have really big project ION needs quite a minute to load
+* When you have really big project ION needs quite a minute to load
   it.
 
-- Audio quality of preview is worse than what you'll get after translation,
+* Audio quality of preview is worse than what you'll get after translation,
   so fear not.
 
-- ION works like a sampler, it creates timbres from samples and then plays
+* ION works like a sampler, it creates timbres from samples and then plays
   them with different speed, and guess what, it is stupid enough to use
   linear approximation. For non-technical reader: it introduces some
   harmonics that are audible in certain cases, especially if you work with
@@ -46,22 +73,28 @@ boy, but anyway here is a list of bad things about ION:
   background noise, but you may not, so if you don't like noise ION is
   probably not for you.
 
-- ION is not interactive. It is for producers. You do a track and put it
+* ION is not interactive. It is for producers. You do a track and put it
   out.
 
-- ION does not work with MIDI at all. Why? MIDI is too piano oriented and I
+* ION does not work with MIDI at all. Why? MIDI is too piano oriented and I
   don't like standard temperament :-) In fact, the way how ION organizes
   music is so different from the conventional, so there is no possible way
   you can work with MIDI in ION.
 
-- ION does not provide effects. You apply them in your DAW. ION knows its
+* ION does not provide effects. You apply them in your DAW. ION knows its
   place in work-flow.
 
-- ION does not use SSE4 because it (ION) is based on wrong principles of
-  functioning. It can do its work only sample by sample, not by packs. But
-  it is still pretty fast.
+* ION does not use SIMD instructions (like SSE) because it (ION) is based on
+  wrong principles of functioning. It can do its work only sample by sample,
+  not by packs. But it is still pretty fast.
 
-- There is probability that you'll meet a horned toad while using the app.
+* ION cannot open files that have non-Latin characters in their names;
+
+* Chances are you'll meet a horned toad while using the app.
+
+To be honest, ION is pretty obsolete. Now I use my another program MIDA and
+algorithmic automation to do the same sort of things. But ION is still can
+do some unique tricks.
 
 ## How to Improve ION
 
@@ -80,7 +113,7 @@ Copyright (c) 2014 Mark Karpov
 
 Distributed under GNU GPL, version 3.
 
-**Warning!** The code itself is free as in freedom (and in fact as in free
+**Warning!** The code itself is free as in freedom (and in fact, as in free
 beer), but it needs linking with proprietary libraries to work. And it must
 be compiled using a proprietary compiler. So this is what it is, a piece of
 shit that I put here anyway.
