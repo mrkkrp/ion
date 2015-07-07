@@ -8,6 +8,10 @@ you're freaky enough. I should warn you that I will not work on it anymore
 as I've lost any interest for imperative languages other than assembly and C
 (it is in C++!).
 
+This stuff was written partly because I wanted to write all parts of such a
+system myself, so it contains implementation of things that can be done
+better with help of good libraries, it's pretty usable anyway.
+
 ## Programs
 
 ION consists of the following programs:
@@ -35,7 +39,7 @@ compiler). Version XE 2 or later is required.
 execute the following command:
 
     ```
-    $ git clone https://github.com/mrkkrp/ion.git master
+    $ git clone https://github.com/mrkkrp/ion.git
     ```
 
 2. If your version of C++ Builder is different form XE 5, or if you've
@@ -63,13 +67,13 @@ boy, but anyway here is a list of bad things about ION:
 * Audio quality of preview is worse than what you'll get after translation,
   so fear not.
 
-* ION works like a sampler, it creates timbres from samples and then plays
-  them with different speed, and guess what, it is stupid enough to use
-  linear approximation. For non-technical reader: it introduces some
-  harmonics that are audible in certain cases, especially if you work with
-  signals that have not so many harmonics initially (sine). Personally I
-  don't cry because of this, I like the shit, but you can use dither, really
-  bold dither I would say. But it gets a little noisy. Personally I like
+* ION works like a sampler, it takes samples and then plays them with
+  different speed, and guess what, it is stupid enough to use linear
+  approximation. For non-technical reader: it introduces some harmonics that
+  are audible in certain cases, especially if you work with signals that
+  have not so many harmonics initially (sine). Personally I don't cry
+  because of this, I like the shit, but you can use dither, really bold
+  dither I would say. But it gets a little noisy. Personally I like
   background noise, but you may not, so if you don't like noise ION is
   probably not for you.
 
@@ -92,20 +96,26 @@ boy, but anyway here is a list of bad things about ION:
 
 * Chances are you'll meet a horned toad while using the app.
 
-To be honest, ION is pretty obsolete. Now I use my another program MIDA and
-algorithmic automation to do the same sort of things. But ION is still can
-do some unique tricks.
+To be honest, ION is pretty obsolete. Now I use my another programs MIDA and
+ALGA to do the same sort of thing (but in fabulous quality, since MIDA and
+ALGA just create data that controls high-end quality plugins and DAWs, or
+whatever stuff you have). But ION still knows some tricks.
 
 ## How to Improve ION
 
 If you want to improve ION and continue its development, I advise the
 following improvements:
 
-- use boost instead of STL;
-- try to rewrite some parts in more functional style;
-- use some well-known library to work with WAVE, abandon my library;
-- use XML instead of parameter lists, abandon my library;
-- it would be great if it could be compiled with GCC (Qt for GUI).
+* use boost instead of STL;
+
+* try to rewrite some parts in more functional style;
+
+* use some well-known library to work with WAVE, abandon my library;
+
+* use XML instead of parameter lists, abandon my library;
+
+* it would be great if it could be compiled with GCC (Qt for GUI), so people
+  could build it and use without buying any stuff.
 
 ## License
 
